@@ -1,0 +1,103 @@
+{% extends "parent.html" %}
+{% block main %}
+{% load static %}
+{% if messages %}
+    {% for msgs in messages %}
+    <div class="alert-warning alert-dismissible fade show" role="alert">
+        <strong> {{msgs}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+     {% endfor %}
+     {% endif %}
+     <!----------------slider------------------------>
+<div class="container-fluid bg-primary py-5 mt-2 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Login Page</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:index'%}">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:aboutus'%}">AboutUs</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:registration'%}">Registration</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------------->
+
+    <div class="outer ">
+        <section class="sec"> 
+            <img src="{% static './images/ba.png'%}">
+        </section>
+        <section class="main ">
+            <div class="login-container">
+                <p class="title">Login </p>
+                <div class="separator"></div>
+
+                    <form class="login-form" method="post" action="{% url 'nouapp:login' %}" id="frmlogin" onsubmit="event.preventDefault();validate();">
+                        {% csrf_token %}
+                        
+                        <div class="form-ontrol">
+                        <input type="text" name='userid'id ="userid" placeholder="Userid/Rollno">
+                      
+                        </div>
+                        <div class="form-ontrol">
+                        <input type="password" name="password"  id="password" placeholder="Password">
+                       
+                        </div>
+                        <a href="{% url 'nouapp:forgotpass'%}" >Forgot Password</a>
+                        <button type="submit" class="submit"> Login </button>
+                        <p>Don`t have an account?<a href="{% url 'nouapp:registration'%}" style="color:red;">Sign Up</a></p>
+
+                    </form>
+
+                
+            </div>
+        </section>
+    </div>
+    
+<script>
+    function validate()
+    {
+        var userid=document.getElementById("userid");
+        var password=document.getElementById("password");
+        if( userid.value=="" || userid.value==null)
+        {
+            alert("Please Enter Userid")
+            userid.focus();
+
+
+        }
+       
+         else if( password.value=="" || password.value==null)
+        {
+            alert("Please Enter Password")
+            password.focus();
+
+
+        }
+        else 
+        {
+            document.getElementById("frmlogin").submit();
+            
+
+
+        }
+        
+
+
+    }
+
+
+
+
+
+</script>
+
+
+
+
+{% endblock main %}

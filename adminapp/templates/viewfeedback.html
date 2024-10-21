@@ -1,0 +1,41 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <h1 style="text-align:center;">show Feedbacks</h1>  
+        <div class="col-sm-12" style="overflow-x:scroll;">
+            <table class="table table-bordered text-light">
+                <tr>
+                    <th>#</th>
+                    <th>roll no</th>
+                    <th>name</th>
+                    <th>program</th>
+                    <th>branch </th>
+                    <th>year </th>
+                    <th>contact no</th>
+                    <th>email address</th>
+                    <th>subject</th>
+                    <th>feedback</th>
+                    <th>posted date</th>
+
+                </tr>
+                {% for f in feed%}
+                <tr>    
+                    <td>{{forloop.counter}}</td>
+                    <td> {{f.rollno}}</td>
+                    <td> {{f.name}}</td>
+                    <td> {{f.program}}</td>
+                    <td> {{f.branch}}</td>
+                    <td> {{f.year}}</td>
+                    <td> {{f.contactno}}</td>
+                    <td> {{f.emailaddress}}</td>
+                    <td> {{f.subject}}</td>
+                    <td> {{f.responsetext}}</td>
+                    <td> {{f.responsedate}}</td>
+
+                </tr>
+                {% endfor %}
+            </table>
+              
+        </div>
+    </div>
+{% endblock body %}

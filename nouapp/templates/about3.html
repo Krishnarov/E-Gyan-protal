@@ -1,0 +1,93 @@
+{% extends "parent.html" %}
+{% block main %}
+{% load static %}
+<!--------------slider---------------->
+<div class="container-fluid bg-primary py-5 mt-2 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">About Us</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:index'%}">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:registration'%}">Registration</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:login'%}">Login</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+<!---------------------------->
+<div class="container-xxl py-5 appl">
+    <div class="container ">
+        <div class="row g-5">
+            <div class="col-lg-3 " data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="row ">
+                    <h5>About University</h5>
+                </div><hr/>
+                <div class="row ab">
+                    <ul>
+                        <a href="{% url 'nouapp:aboutus'%}" ><li >Profile</li></a>
+                        <a href="{% url 'nouapp:about2'%}"><li>Aims & Objectives</li></a>
+                        <a href="{% url 'nouapp:about3'%}"><li id="act">Administrative Setup</li></a>
+                        <a href="{% url 'nouapp:about4'%}"><li>Historical Background</li></a>
+                        <a href="{% url 'nouapp:about5'%}"><li>Recognition</li></a>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 wow py-5 mx-auto fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="card ml-5" style="width:25em;height:auto;">
+                    <img src="{% static './images/rajendra.jpg'%}" class="card-img-top" height="auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">CHANCELLOR & HON'BLE GOVERNOR OF BIHAR</h5>
+                      <p class="card-text">Sh. Rajendra Vishwanath Arlekar</p>
+                      <a href="{% url 'nouapp:contactus'%}" class="btn btn-primary"> More</a>
+                    </div>
+                  </div>
+                  <div class="card ml-5 mt-5" style="width:25em;height:auto;">
+                    <img src="{% static './images/krishna.jpg'%}" class="card-img-top" height="auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">VICE CHANCELLOR</h5>
+                      <p class="card-text">Prof. (Dr.) Krishna Chandra Sinha.</p>
+                      <a href="{% url 'nouapp:contactus'%}" class="btn btn-primary">More</a>
+                    </div>
+                  </div>
+                  <div class="card ml-5 mt-5" style="width:25em;height:auto;">
+                    <img src="{% static './images/neelam.jpg'%}" class="card-img-top" height="auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">REGISTRAR (Exam)</h5>
+                      <p class="card-text"> Dr. Neelam Kumari</p>
+                      <a href="{% url 'nouapp:contactus'%}" class="btn btn-primary"> More</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-4 py-5 wow mx-auto fadeInUp" data-wow-delay="0.3s">
+                <div class="card" style="width: 25em; height:auto;">
+                    <img src="{% static './images/sanjoy.jpg'%}" class="card-img-top"height="auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">PRO VICE CHANCELLOR</h5>
+                      <p class="card-text">Prof. (Dr.) Sanjoy Kumar</p>
+                      <a href="{% url 'nouapp:contactus'%}" class="btn btn-primary"> More</a>
+                    </div>
+                  </div> 
+                  <div class="card mt-5" style="width: 25em; height:auto;">
+                    <img src="{% static './images/habibur.jpg'%}" class="card-img-top"height="auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"> REGISTRAR</h5>
+                      <p class="card-text">Dr. Md. Habibur Rahman</p>
+                      <a href="{% url 'nouapp:contactus'%}" class="btn btn-primary"> More</a>
+                    </div>
+                  </div>            
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------------------->
+
+
+
+
+{% endblock main %}

@@ -1,0 +1,191 @@
+{% extends "parent.html" %}
+{% block main %}
+{% load static %}
+{% if messages %}
+{% for mes in messages %}
+<div class="alert-warning alert-dismissible fade show" role="alert">
+    <strong> {{mes}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+</div>
+{% endfor %}
+{% endif %}
+<script>
+function validate()
+{
+
+    var rollno=document.getElementById("rollno");
+    var name=document.getElementById("name");
+    var fname=document.getElementById("fname");
+    var mname=document.getElementById("mname");
+    var contactno=document.getElementById("contactno");
+    var emailaddress=document.getElementById("emailaddress");
+    var password=document.getElementById("password");
+    var confirmpassword=document.getElementById("confirmpassword");
+    var emailexp=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    if(rollno.value=="" || rollno.value==null){
+        alert("please enter roll number")
+        rollno.focus();
+    }else if(isNaN(rollno.value)){
+        alert("please enter only numbers")
+        rollno.focus();
+    }else if(name.value=="" || name.value==null){
+        alert("please enter your name")
+        name.focus();
+
+    }else if(fname.value=="" || fname.value==null){
+        alert("please enter your Father name")
+        fname.focus();
+
+    }else if(mname.value==""|| mname.value==null){
+        alert("please enter your mother name")
+        mname.focus();
+
+    }else if(contactno.value==""||contactno.value==null){
+        alert("please enter your contact number")
+        contactno.focus();
+    }else if(isNaN(contactno.value)){
+        alert("please enter only numbers")
+        contactno.focus();
+    }else if(contactno.value.length!=10){
+     alert("please enter 10 digit number")
+            contactno.focus();
+    }else if(emailaddress.value=="" || emailaddress.value==null){
+        alert("please enter email address");
+        emailaddress.focus();
+    }else if (!emailexp.test(emailaddress.value))
+    {
+        alert("please enter valid email address");
+        emailaddress.focus();
+    }else if(password.value=="" || password.value==null){
+        alert("please enter Password")
+        Password.focus();
+    }else if(password.value.length<8){
+        alert("please enter min 8 digit or char ")
+        password.focus();
+    }else if(confirmpassword.value=="" || confirmpassword.value==null){
+        alert("please enter Confirm Password")
+        confirmpassword.focus();
+    }else if(confirmpassword.value!=password.value){
+        alert("please enter same Password")
+        confirmpassword.focus();
+    }else
+    {
+        document.getElementById("frmregistration").submit();
+    }
+
+
+}
+
+
+</script>
+
+<!----------------slider------------------------>
+<div class="container-fluid bg-primary py-5 mt-2 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Registration page</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:index'%}">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:aboutus'%}">AboutUs</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:login'%}">Login</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------------->
+
+
+
+<!---------------------------->
+<div class="row">
+    <section class="col-sm-6 sec">
+        <img src="{% static './images/ba.png'%}"justify-align="center">
+    </section>
+    <div class="col-sm-6 d-flex">
+        <div class="row p-2 mt-5 rcont">
+            <p class="title">Student Registration Form</p>
+        <div class="separator"></div>
+<form class="form-group login-form" id="frmregistration" onsubmit="event.preventDefault();validate();" method="post" action="{% url 'nouapp:registration' %}">
+    {% csrf_token %}
+                <div class="form-ontrol">
+                <input type="number" name="rollno" placeholder="roll no / user id" id="rollno"/>
+                </div>
+                <div class="form-ontrol">
+                <input type="text" name="name" id="name" placeholder="Enter Your Name"/>
+                </div>
+           
+                <div class="form-ontrol">
+                <input type="text" name="fname" placeholder="enter Your Father Name" id="fname"/>
+                </div>
+                <div class="form-ontrol">
+                <input type="text" name="mname"  placeholder="Enter Your Mother Name" id="mname"/>
+                </div>
+                <div class="form-ontrol">
+                <div class="row">
+                    <div class="col-sm-1 ml-5" > <input type="radio" name="gender" value="Male" /></div><div class="col-sm-1">Male</div>
+                    <div class="col-sm-4"></div>
+                     <div class="col-sm-1"> <input type="radio" name="gender" value="Female" /></div><div class="col-sm-1">Female</div>
+                 </div>
+                </div>
+                <div class="form-ontrol">
+                    <p class="ml-2">Enter Your Address</p>
+                <textarea name="address" placeholder="address"  class="textarea"> </textarea>
+                </div>
+                <div class="form-ontrol">
+                <select name="program"  >
+                    <option>--Select Program--</option>
+                    {% for p in program %}
+                    <option value="{{p.program}}">{{p.program}}</option> 
+                  
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-ontrol">
+                <select name="branch"  >
+               
+                    <option>--Select branch--</option>
+                    {% for b in branch %}
+                    <option value="{{b.branch}}">{{b.branch}}</option>
+                 {% endfor %}
+                </select>
+            </div>
+            <div class="form-ontrol">
+           
+                <select name="year"  >
+                    <option>--Select Year--</option>
+                    {% for y in year %}
+                    <option value="{{y.year}}">{{y.year}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+                <div class="form-ontrol">
+                <input type="number" placeholder="Enter Your Mobile no" name="contactno" id="contactno"/>
+                </div>   
+                <div class="form-ontrol">
+                <input type="text" name="emailaddress" placeholder="Enter Your Email Address"  id="emailaddress"/>
+                </div>
+                <div class="form-ontrol">
+                <input type="Password" name="password" placeholder="Password"   id="password"/>
+                </div>
+                <div class="form-ontrol">
+                <input type="Password" name="confirmpassword" placeholder="Confirm Password"  id="confirmpassword"/>
+                </div>
+                <button type="submit" class="submit"> Register </button>
+            
+</from>
+
+</div>
+
+
+    
+
+
+
+
+{% endblock main %}

@@ -1,0 +1,44 @@
+{% extends "studentparent.html" %}
+{% block body %}
+{% if messages %}
+    {% for msg in messages %}
+    <div class="alert-warning alert-dismissible fade show" role="alert">
+        <strong> {{msg}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+     {% endfor %}
+     {% endif %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Student Home</h1> 
+            <form class="from-group" method="post" action="{% url 'studentapp:response' %}">
+                {% csrf_token %}
+                <Table class="Table Table-bordered text-light" style="margin:auto; width:80%;">
+                    <tr>
+                        <td>select response type</td>
+                        <td>
+                            <select name="responsetype" class="from-control">
+                                <option>--select response type--</option>
+                                <option value="complane">complane</option>
+                                <option value="feedback">feedback</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>enter subject</td>
+                        <td><input type="text" name="subject"class='form-control' style="color:white"/>
+                    </tr>
+                    <tr>
+                        <td>enter response text</td>
+                        <td><textarea name="responsetext"class='form-control' style="color:white;"></textarea>
+                    </tr>
+                    <tr><td>&nbsp;</td>
+                       <td> <button  type="submit"class="btn btn-primary">submit</button></td>
+                    </tr>
+                </table>
+                    
+            </form>  
+              
+        </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,60 @@
+{% extends "studentparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">View profile</h1>   
+            <table class="table table-border text-light m-auto" style="width:50%;">
+                <tr>
+                    <td>roll nu</td>
+                    <td>{{stu.rollno}}</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>{{stu.name}}</td>
+                </tr>
+                <tr>
+                    <td>father name</td>
+                    <td>{{stu.fname}}</td>
+                </tr>
+                <tr>
+                    <td>mother name</td>
+                    <td>{{stu.mname}}</td>
+                </tr>
+                <tr>
+                    <td>gender</td>
+                    <td>{{stu.gender}}</td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td>{{stu.address}}</td>
+                </tr>
+                <tr>
+                    <td>program</td>
+                    <td>{{stu.program}}</td>
+                </tr>
+                <tr>
+                    <td>branch</td>
+                    <td>{{stu.branch}}</td>
+                </tr>
+                <tr>
+                    <td>year</td>
+                    <td>{{stu.year}}</td>
+                </tr>
+                <tr>
+                    <td>contact no</td>
+                    <td>{{stu.contactno}}</td>
+                </tr>
+                <tr>
+                    <td>email address</td>
+                    <td>{{stu.emailaddress}}</td>
+                </tr>
+                <tr>
+                    <td>registation date</td>
+                    <td>{{stu.regdate}}</td>
+                </tr>
+
+            </tablt>
+              
+        </div>
+    </div>
+{% endblock body %}

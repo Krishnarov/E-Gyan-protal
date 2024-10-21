@@ -1,0 +1,67 @@
+{% extends "parent.html" %}
+{% block main %}
+{% load static %}
+<!--------------slider---------------->
+<div class="container-fluid bg-primary py-5 mt-2 mb-5 page-header">
+  <div class="container py-5">
+      <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+              <h1 class="display-3 text-white animated slideInDown">About Us</h1>
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                      <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:index'%}">Home</a></li>
+                      <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:registration'%}">Registration</a></li>
+                      <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:login'%}">Login</a></li>
+                  </ol>
+              </nav>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!------------------------------>
+<div class="container-xxl py-5 appl">
+    <div class="container ">
+        <div class="row g-5">
+            <div class="col-lg-3 a_c" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="row ">
+                    <h5>About University</h5>
+                </div><hr/>
+                <div class="row ab">
+                    <ul>
+                        <a href="{% url 'nouapp:aboutus'%}" ><li>Profile</li></a>
+                        <a href="{% url 'nouapp:about2'%}"><li>Aims & Objectives</li></a>
+                        <a href="{% url 'nouapp:about3'%}"><li>Administrative Setup</li></a>
+                        <a href="{% url 'nouapp:about4'%}"><li  id="act">Historical Background</li></a>
+                        <a href="{% url 'nouapp:about5'%}"><li>Recognition</li></a>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9 wow py-5 fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                <h1 class="mb-3">Historical Background</h1>
+
+                <p class="mb-3">Towards the Southeast of Patna, the Capital City of Bihar State in India, is a village called the 'Bada Gaon', in the vicinity of which, are the world famous ruins of Nalanda University.</p>
+                <p class="mb-3">Founded in the 5th Century A.D., Nalanda is known as the ancient seat of learning. 2,000 Teachers and 10,000 Students from all over the Buddhist world lived and studied at Nalanda, the first Residential International University of the World. A walk in the ruins of the university, takes you to an era, that saw India leading in imparting knowledge, to the world - the era when India was a coveted place for studies. The University flourished during the 5th and 12th century.</p>
+                <p class="mb-3">Although Nalanda is one of the places distinguished as having been blessed by the presence of the Buddha, it later became particularly renowned as the site of the great monastic university of the same name , which was to become the crown jewel of the development of Buddhism in India. The name may derive from one of Shakyamuni's former births , when hewas a king whose capital was here. Nalanda was one of his epithets meaning "insatiable in giving."</p>
+                <p class="mb-3">This place saw the rise and fall of many empires and emperors who contributed in the development of Nalanda University. Many monasteries and temples were built by them. Kingarshwardhana gifted a 25m high copper statue of Buddha and Kumargupta endowed a college of fine arts ere. Nagarjuna- a Mahayana philosopher, Dinnaga- founder of the school of Logic and Dharmpala- the Brahmin scholar, taught here.</p>
+                <p class="mb-3">The famous Chinese traveller and scholar,Hieun-Tsang stayed here and has given a detailed description of the situations prevailing at that time. Careful excavation of the place has revealed many stupas, monasteries,hostels,stair cases,meditation halls, lecture halls and many other structures which speak of the splendour and grandeur this place enjoyed,when the place was a centre of serious study.</p>
+                <p class="mb-3">A large number of ancient Buddhist establishments, stupas, chaityas, temples and monastery sites have been excavated and they show that this was one of the most important Buddhist centres of worship and culture.Regarding the historicity of Nalanda, we read in Jaina texts that Mahavira Vardhamana spent as many as fourteen rainy seasons in Nalanda.</p>
+                <p class="mb-3">Pali Buddhist Literature , too, has ample references to Nalanda, which used to be visited by Lord Buddha. During the days of Mahavira and Buddha,Nalanda was apparently a very prosperous temple city, a great place of pilgrimage and the site of a celebrated university. It is said that King Asoka gave offerings to the Chaitya of Sariputra at Nalanda and erected a temple there.Taranath mentions this and also that Nagarjuna, the famous Mahayana philosopher of the second century A.D., studied at Nalanda. Nagarjuna later became the high-priest there.</p>
+                <p class="mb-3">The Gupta kings patronised these monasteries, built in old Kushan architectural style, in a row of cells around a courtyard. Ashoka and Harshavardhana were some of its most celebrated patrons who built temples and monasteries here. Recent excavations have unearthed elaborate structures here. Hiuen Tsang had left ecstatic accounts of both the ambiance and architectureof this unique university of ancient times. Modern historians have tentatively dated the founding of a monastery at Nalanda as being in the fifth century.However, this may not be accurate. For example,the standard biographiesof the teacher Nagarjuna, believed by most historians to have been born around 150 AD, are quite specific about his having received ordination at Nalanda monastery when he was seven years old. Further, his teacher Rahulabhadra is said to have lived there for some time before that. We may infer that there were a monastery or monasteries at Nalanda long before the foundation of the later Great Mahavihara.</p>
+                <p class="mb-3">At the time Hsuan Chwang stayed at Nalanda and studied with the abbot Shilabhadra, it was already a flourishing centre of learning. In many ways it seems to have been like a modern university. There was a rigorous oral entry examination conducted by erudite gatekeepers, and many students were turned away.To study or to have studied at Nalanda was a matter of great prestige. However, no degree was granted nor was a specific period of study required. The monks' time, measured by a water clock, was divided between study and religious rites and practice.There were schools of study in which students received explanations by discourse, and there were also schools of debate, where the mediocre were often humbled, and the conspicuously talented distinguished. Accordingly, the elected abbot was generally the most learned man of the time.</p>
+                <p class="mb-3">The libraries were vast and widely renowned, although there is a legend of a malicious fire in which many of the texts were destroyed and irrevocably lost.</p>
+                <p class="mb-3">During the Gupta age, the practice and study of the mahayana, especially the madhyamaka, flourished. However, from 750 AD, in the Pala age, there was an increase in the study and propagation of the tantric teachings.This is evidenced by the famous pandit Abhayakaragupta, a renowned tantric practitioner who was simultaneously abbot of the Mahabodhi, Nalanda and Vikramashila monasteries. Also Naropa, later so important to the tantric lineages of the Tibetan traditions, was abbot of Nalanda in the years 1049-57.</p>
+                <p class="mb-3">Much of the tradition of Nalanda had been carried into Tibet by the time of the Muslim invasions of the twelfth century. While the monasteries of Odantapuri and Vikramashila were then destroyed, the buildings at Nalanda do not seem to have suffered extensive damage at that time, although most of the monks fled before the desecrating armies. In 1235 the Tibetan pilgrim Chag Lotsawa found a 90 year old teacher, Rahula Shribhadra, with a class of seventy students. Rahula Shribhadra managed to survive through the support of a local brahmin and did not leave until he had completed educating his last Tibetan student.</p>
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------------------->
+
+
+
+
+{% endblock main %}

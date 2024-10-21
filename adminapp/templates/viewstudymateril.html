@@ -1,0 +1,31 @@
+{% extends "adminparent.html" %}
+{% block body %}
+                <div class="col-sm-12">
+                    <h1 style="text-align:center;">View stduy material</h1>   
+                    <table class="table table-bordered text-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Program</th>
+                            <th>Branch</th>
+                            <th>Year</th>
+                            <th>Subject</th>
+                            <th>File Name</th>
+                            <th>File</th>
+                        </tr>
+                        {% for m in mate %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{m.program}}</td>
+                            <td>{{m.branch}}</td>
+                            <td>{{m.year}}</td>
+                            <td>{{m.subject}}</td>
+                            <td>{{m.file_name}}</td>
+                            <td>{{m.my_file}}</td>
+        
+                        </tr>
+                        {% endfor %}
+                    </table>
+                      
+                </div>
+            
+{% endblock body %}

@@ -1,0 +1,44 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Add News</h1>   
+            <form class="form-group" action="{% url 'adminapp:news'%}" method="post" enctype="multipart/form-">
+            {% csrf_token %}
+            <table class="table table-bordered texr-light m-auto" style="weight:70%">
+                <tr>
+                    <td>Enter news </td>
+                    <td>
+                        <textarea name="newstext" class="form-control  text-light" style="min-height:200px;"></textarea>
+        
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit" class="btn btn-success">add news</button></td>
+                </tr>
+
+
+            </table>
+        </form>
+        <br/></br/>
+
+        <table class="table table-bordered texr-light m-auto" style="weight:70%">
+            <tr>
+                <th>news id</th>
+                <th>news</th>
+                <th>news date</th>
+            </tr>
+            {% for n in ns %}
+            <tr>
+                <td>{{n.nid}}</td>
+                <td>{{n.newstext}}</td>
+                <td>{{n.newsdate}}</td>
+            </tr>
+
+            {% endfor %}
+            
+        </table>
+        </div>
+    </div>
+{% endblock body %}

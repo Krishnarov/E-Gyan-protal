@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+    {% load static %}
+  <head>
+<style>
+:root{
+    --primary-color:#edf2fc;
+    --secondary-color:#212121;
+}
+#foo{
+    background-image:url("{% static './images/lib.jpg'%}");
+    background-size:cover;
+    background-repeat: no-repeat;
+
+}
+#mrq{
+    background:url("{% static './images/blue.png'%}")no-repeat left bottom;
+    padding-left: 110px;
+    background-size: 120px 27px;
+   
+}
+#foo2{
+  background-image:url("{% static './images/lib.jpg'%}");
+  background-size:cover;
+  background-repeat: no-repeat;
+
+}
+.poem-wrap {
+  background-image: url("{% static './images/floral.png'%}");
+  background-repeat: no-repeat;
+  background-size:auto 100%;
+  min-height:516px:
+}
+.page-header{
+  background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url("{% static './images/carousel-1.jpeg'%}");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.rimg{
+  background-image:url("{% static './images/db.jpg'%}");
+  display: flex;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.eimg{
+  background-image:url("{% static './images/bk.png'%}");
+  display: flex;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+section.sec{
+  background-image:url("{% static './images/bk.png'%}");
+  background-size:cover;
+  background-repeat: no-repeat;
+  display: flex;
+ 
+  align-items: center;
+  
+
+}
+@media (max-width: 780px) {
+
+  .outer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  section.sec{
+      display: none;
+  }
+  section.eimg{
+    display:none;
+  }
+
+}
+.textarea{
+  background-color: #e6e6e6;
+  
+  padding:1em;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  width:100%;
+}
+.reimg{
+  background-image:url(/static/images/view.jpg);
+  background-repeat:no-repeat;
+  height:100vh;
+  width:100vw;
+}
+
+
+</style>
+
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nalanda Open University</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/style1.css'%}">
+
+    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css'%}">
+    <link rel="icon" type="image/x-icon" href="{% static './images/icon.ico' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body data-bs-theme="light">
+
+    <a href="tel:7080102007" class="fixed-btn-1 pt-3" id="fixe"> <h6 style="text-align:center;font-size:14px; line-height:1px;" class="me-2">E-Gyan Helpline No.</h6> <i class="fa-spin fa fa-phone" style="font-size:1rem;"></i> +91 8726600753</a>
+         
+
+
+    <div class="row p-0 m-0" style="background-image: linear-gradient(to right, red,orange,yellow,green,violet);">
+      
+      <div class="col-md-2 mt-2">
+      <h5 style="font-size:.9rem; text-align:right;"> <i class="fa-spin fa fa-phone  ms-3"></i> +91 7080102007</h5></div>
+      <div class="col-md-3 mt-2">
+      <h5 style="font-size:.9rem;"> <i class="fa fa-envelope  ms-4"></i> nouegyanhelp@gmail.com </h5>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-4 mt-1">
+      <div class="contact-info d-flex align-items-center ">
+      <h5 id="p1" style="font-size:.9rem; float_right">Sat Sep 16 2023 17:54:45 GMT+0530 (India Standard Time)</h5>
+      </div>
+      </div>
+      <div class="col-md-1 mt-2"id="mo">
+        <i class=" fa fa-moon  ms-1"></i>
+      </div>
+    </div>
+    <!------------------------------------------>
+    
+    <!------------------>
+      <div class="container-fluid m-0 p-0" >
+
+        <div class="row p-0 m-0" style="min-height:100px">
+            <div class="col-sm-2" >
+                <img src="{% static './images/logo.png' %}"height="120px" width="120px"/>
+            </div>
+            <div class="col-sm-8" style="margin:auto; text-align:center;">
+                <h1>NALANDA OPEN UNIVERSITY</h1>
+                <h2>नालन्दा खुला विश्वविद्यालय</h2>
+                <p><b>University of Bihar-800017,India </b></p>
+            </div> 
+            <div class="col-sm-2">
+                <img src="{% static './images/logo.png' %}"height="120px" width="120px"/>
+            </div>
+
+        </div> 
+      </div>
+        <!---------------navbar-------------------------------->
+        <div class="row p-0 m-0">
+            <nav data-bs-theme="light" id="nv"class="navbar navbar-expand-lg" >
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                             <li class="nav-item ml-4">
+                                <a class="nav-link active" aria-current="page" href="{% url 'nouapp:index'%}">Home</a>
+                             </li>
+                             <li class="nav-item" >
+                                 <a class="nav-link" href="{% url 'nouapp:aboutus'%}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'nouapp:registration'%}">Registration</a>
+                           </li>
+                           <li class="nav-item">
+                            <a class="nav-link" href="{% url 'nouapp:login'%}" >Login</a>
+                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="{% url 'nouapp:contactus'%}">Contact Us</a>
+                         </li>
+                              
+                                       
+                        </ul>
+                            <form class="d-flex mr-4" rcole="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                 <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-------------marqee---------------->
+        
+        <div id="mrq" class="row mt-1">
+            <div>
+                <marquee style="" scrollamount="5" direction="left" onmouseover="this.stop()" onmouseout="this.start()">
+                  <div class="news mt-1">
+                    <a href="http://www.nou.ac.in/Recognition%20Application%202018.html"> <img src="{%static './images/new.gif'%}"/>Application for Recognition of HEI/Programmes under Open & Distance Learning Mode, UGC (ODL) Regulations, 2018  || </a>
+                    <a href="http://www.biharbed2018.in/">  Click here to Apply Online for B.Ed. Combined Entrance Test-2018</a>
+                    <a href="#">    </a>
+                    <a href="#">    </a>
+
+                  </div>
+                </marquee>
+            </div>
+        </div>
+          
+
+
+        <!------------------------------------------>
+
+                <div>
+                {% block main %}
+
+
+
+
+
+
+    
+                {% endblock main %}
+{% comment %}
+  <!---------news------>
+  <hr/>
+  <div class="container">
+    <div class="h">
+      <h3>News<h3>
+  {% for n in ns %}
+  
+  <div style="weight:300px;text-align:center ">{{n.newstext}}</div> 
+  {% endfor %}
+    </div>
+  </div>
+{% endcomment %}
+<!-------------------------->
+                </div>
+        <div class="row p-0 m-0" id="foo" >
+          <div class="row min-height:100px" id="fo">
+            <h1>NALANDA OPEN UNIVERSITY
+            </h1>
+          </div>
+          <div class="row p-0 m-0"id="foot">
+            <div class="col-sm-4 text-light" id="fa">
+              <h5>Admission</h5>
+              <ul>
+                <li><a href="#">Post Graduate Programmes</a></li>
+                <li><a href="#">Graduate Programmes</a></li>
+                <li><a href="#"> P.G Diploma / Diploma Programmes</a></li>
+                <li><a href="#"> Certificate Programmes</a></li>
+                <li><a href="#"> Prospectus July 2023</a></li>
+                <li><a href="#"> Notices</a></li>
+                <li><a href="#"> Regional/Study Centres</a></li>
+                <li><a href="#"> University Approved MOOC Courses</a></li>
+          
+              </ul>
+            </div>
+            <div class="col-sm-4 justify-content-center text-center text-light">
+             <img src="{% static './images/logo.png'%}" height="150px"/>
+              <h4>NALANDA OPEN UNIVERSITY</h4>
+              <h6>&copy; University of Bihar-800017,India </h6>
+            </div>
+            <div class="col-sm-4 text-light" id="fa">
+               <h5>Exam Results</h5>
+              <ul>
+                <li><a href="#">PCertificate, Intermediate, & UG Results 2018</a></li>
+                <li><a href="#">B.Ed. Part II Provisional Result 2016</a></li>
+                <li><a href="#"> P.G Diploma / Diploma Programmes</a></li>
+                <li><a href="#"> PG Second Exam Results 2017</a></li>
+                <li><a href="#"> PG Results 2017</a></li>
+                <li><a href="#"> Second Exam Results 2017</a></li>
+                <li><a href="#"> Data Regarding Ph.D. Scholars</a></li>
+          
+              </ul>
+            </div>
+
+
+
+            <hr/>
+            &copy; 2011 NALANDA Open University. All rights reserved
+          </div>
+
+
+        </div>
+
+
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script>
+        var mon=document.getElementById("mo");
+        mon.onclick = function(){
+            var element=document.body;
+            element.dataset.bsTheme =
+                element.dataset.bsTheme == "light" ? "dark":"light";
+                
+            var ele=document.getElementById("nv");
+            ele.dataset.bsTheme =
+                ele.dataset.bsTheme == "light" ? "dark":"light"; 
+            
+          
+        }
+ 
+    </script>
+  </body>
+</html>

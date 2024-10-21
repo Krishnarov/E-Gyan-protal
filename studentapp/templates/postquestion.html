@@ -1,0 +1,47 @@
+{% extends "studentparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Discussion forum</h1>  
+            <form class="form-group"action="{% url 'studentapp:postquestion'%}"method='post'>
+                {% csrf_token %}
+                <Table class="Table" style="margin:auto;width:70%;">
+                    <tr>
+                        <td>Enter Question </td>
+                        <td><textarea name="question" class="form-control text-light"></textarea>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="submit" class="btn btn-primary">Post</button></td>
+                    </tr>
+
+                </table>
+                
+            </form><br/><br/>
+            <Table class="Table Table-bordered "style="width:80%;margin:auto;">
+                <Tr>
+                    <th>qid</th>
+                    <th>Question</th>
+                    <th>posted by</th>
+                    <th>posted date</th>
+                
+                    <th>post answer</th>
+                    <th>view answer</th>
+                <tr>
+                    {% for q in quse %}
+                    <tr>
+                        <td> {{q.qid}}</td>
+                        <td>{{q.question}}</td>
+                        <td> {{ q.postedby}}</td>
+                        <td>{{q.posteddate}}</td>
+                       
+                        <td><a href="{% url 'studentapp:postanswer' qid=q.qid%}"> <button class="btn btn-primary">Post</button></a> </td>
+                        <td><a href="{% url 'studentapp:viewanswer' qid=q.qid%}"><button class="btn btn-primary">view</button></a></td>
+
+                    </tr>
+                    {% endfor %}
+            </table>
+              
+        </div>
+    </div>
+{% endblock body %}

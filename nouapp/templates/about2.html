@@ -1,0 +1,81 @@
+{% extends "parent.html"%}
+{% block main %}
+{% load static %}
+<!--------------slider---------------->
+<div class="container-fluid bg-primary py-5 mt-2 mb-5 page-header">
+  <div class="container py-5">
+      <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+              <h1 class="display-3 text-white animated slideInDown">About Us</h1>
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                      <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:index'%}">Home</a></li>
+                      <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:registration'%}">Registration</a></li>
+                      <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:login'%}">Login</a></li>
+                  </ol>
+              </nav>
+          </div>
+      </div>
+  </div>
+</div>
+<!------------------------------>
+<div class="container-xxl py-5 appl">
+    <div class="container ">
+        <div class="row g-5">
+            <div class="col-lg-2 " data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="row ">
+                    <h5>About University</h5>
+                </div><hr/>
+                <div class="row ab">
+                    <ul>
+                        <a href="{% url 'nouapp:aboutus'%}" ><li >Profile</li></a>
+                        <a href="{% url 'nouapp:about2'%}"><li id="act">Aims & Objectives</li></a>
+                        <a href="{% url 'nouapp:about3'%}"><li>Administrative Setup</li></a>
+                        <a href="{% url 'nouapp:about4'%}"><li>Historical Background</li></a>
+                        <a href="{% url 'nouapp:about5'%}"><li>Recognition</li></a>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5 wow py-5 fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active" data-bs-interval="10000">
+                            <img src="{% static './images/g3.jpg'%}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item" data-bs-interval="2000">
+                            <img src="{% static './images/g6.jpg'%}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="{% static './images/carousel-1.jpeg'%}" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>                </div>
+            </div>
+            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                <h2 class="mb-4">Aims & Objectives</h2>
+                <ul>
+                    <li>To Provide educational opportunities to those who are unable to take up formal education and are still desirous to upgrade their educational qualifications and acquire knowledge in various fields of learning through the print medium (correspondence course), contact programmes, study centres and mass media.</li>
+                    <li>To provide flexibility in matters of eligibility for enrolment for higher education, age of entry, choice of course, methods of learning, conduct of examination and operation of programmes.</li>
+                    <li>To offer degree and diploma courses and to make provision for research for advancement and dissimination of knowledge.</li>
+                    <li>To provide special facilities to groups like, elderly people, in-service personnel, housewives, people living in remote areas, socially disadvantaged people of the society and all others who wish to upgrade their skill and acquire higher academic qualification through distance education.</li>
+                    <li>To lay emphasis on vocational, as well as, conventional courses, leading to award of degrees and certificates.</li>
+                    <li> To create awareness for self-sufficiency and equip people with knowledge and higher qualification to enable them to become suitable for new job opportunities.</li>
+                    <li>To provide course for rural, agricultural, industrial and commercial needs of people and design learning material for improving socio-economic condition of the masses.</li>
+                    <li>To bring awareness in women, children and down-trodden of their social rights, duties and legal status in society.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

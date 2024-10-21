@@ -1,0 +1,113 @@
+{% extends "parent.html" %}
+{% block main %}
+{% load static %}
+
+<script>
+    function validate()
+    {
+        var userid=document.getElementById("userid");
+        var emailid=document.getElementById("emailid");
+        var emailexp=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if( userid.value=="" || userid.value==null)
+        {
+            alert("Please Enter Userid")
+            userid.focus();
+
+
+        }
+       
+         else if( emailid.value=="" || emailid.value==null)
+        {
+            alert("Please Enter Email id ")
+            emailid.focus();
+
+
+        }
+        //else if (!emailxp.test(emailid.value))
+        //{
+         //   alert("please enter valid email id");
+          //  emailid.focus();
+       // }
+        else 
+        {
+            document.getElementById("frmlogin").submit();
+            
+
+
+        }
+        
+
+
+    }
+
+
+
+
+
+</script>
+
+
+
+
+<!----------------slider------------------------>
+<div class="container-fluid bg-primary py-5 mt-2 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Password Recovery Page</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:index'%}">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:registration'%}">Registration</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:login'%}">Login</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------------->
+{% if messages %}
+    {% for msg in messages %}
+    <div class="alert-warning alert-dismissible fade show" role="alert">
+        <strong> {{msg}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+     {% endfor %}
+     {% endif %}
+
+
+<div class="outer ">
+    <section class="sec"> 
+        <img src="{% static './images/img.svg'%}">
+    </section>
+    <section class="main ">
+        <div class="login-container">
+            <p class="title">Password Recovery </p>
+            <div class="separator"></div>
+
+                <form class="login-form" method="post" action="{% url 'nouapp:forgotpass' %}" id="frmlogin" onsubmit="event.preventDefault();validate();">
+                    {% csrf_token %}
+                    
+                    <div class="form-ontrol">
+                    <input type="text" name='userid'id ="userid" placeholder="Userid/Rollno">
+                  
+                    </div>
+                    <div class="form-ontrol">
+                    <input type="text" name="emailid"  id="emailid" placeholder="Enter Your Email id">
+                   
+                    </div>
+                    
+                    <button type="submit" class="submit"> Login </button>
+                    <a href="{% url 'nouapp:login'%}" >login page</a>
+                    <p>Don`t have an account?<a href="{% url 'nouapp:registration'%}" style="color:red;">Sign Up</a></p>
+
+                </form>
+
+            
+        </div>
+    </section>
+</div>
+
+
+{% endblock main %}

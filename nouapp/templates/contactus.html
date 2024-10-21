@@ -1,0 +1,124 @@
+{% extends "parent.html" %}
+{% block main %}
+{% load static %}
+
+     <script>
+        function validate()
+        {
+            var name=document.getElementById("name");
+            var contactno=document.getElementById("contactno");
+            var emailaddress=document.getElementById("emailaddress");
+           var emailexp=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (name.value=="" || name.value==null)
+            {
+                alert("please enter name");
+                name.focus();
+
+            }
+            else if(contactno.value=="" || contactno.value==null)
+            {
+                alert("please enter contact number");
+                contactno.focus();
+            }
+            else if (isNaN(contactno.value))
+            {
+                alert("please enter numbers only");
+                contactno.focus();
+            
+            }
+            else if (contactno.value.length!=10)
+            {
+                alert("please enter 10 digit numbers");
+                contactno.focus();
+            }
+            else if (emailaddress.value=="" || emailaddress.value==null)
+            {
+                alert("please enter email address");
+                emailaddress.focus();
+            }
+            else if (!emailexp.test(emailaddress.value))
+            {
+                alert("please enter valid email address");
+                emailaddress.focus();
+            }
+            else{
+                document.getElementById("frmenquiry").submit();
+            }
+
+        }
+
+     </script>
+<!----------------slider------------------------>
+<div class="container-fluid bg-primary py-5 mt-2 mb-5 page-header m-0 p-0">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Contact Us Page</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:index'%}">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:registration'%}">Registration</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:login'%}">Login</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------------->
+{% if messages %}
+    {% for msg in messages %}
+    <div class="alert-warning alert-dismissible fade show" role="alert">
+        <strong> {{msg}}</strong>
+        {% comment %} <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button> {% endcomment %}
+    </div>
+     {% endfor %}
+{% endif %}
+
+<div class="row m-0 p-0">
+    <section class="col-sm-6 eimg"> 
+        <img src="{% static './images/img.svg'%}" height="50%"width="50%"justify-align="center">
+    </section>
+
+    <section class="col-sm-6 d-flex">
+        <div class="row p-2 mt-5 econt">
+            <p class="title">Enquiry Form</p>
+        <div class="separator"></div>
+        <form class="form-group login-form" id="frmenquiry" onsubmit="event.preventDefault();validate();" method="post" action="{% url 'nouapp:contactus' %}">
+         {% csrf_token %}
+        
+                 <div class="form-ontrol">
+                    
+                     <input type="text" name="name" placeholder="Enter Your Name" id="name"/>
+                    
+                </div>
+                 
+                     <div class="form-ontrol">
+                        <div class="row">
+                           <div class="col-sm-1 ml-5" > <input type="radio" name="gender" value="Male" /></div><div class="col-sm-1">Male</div>
+                           <div class="col-sm-4"></div>
+                            <div class="col-sm-1"> <input type="radio" name="gender" value="Female" /></div><div class="col-sm-1">Female</div>
+                        </div>
+                     </div>
+                     <div class="form-ontrol">
+                        <p class="ml-2">Enter Your Address</p>
+                     <textarea name="address"placeholder="Enter Your Address" class="textarea"> </textarea>
+                     </div>
+                 
+                     <div class="form-ontrol">
+                     <input type="number" name="contactno"  id="contactno" placeholder="Enter Contact No"/>
+                     </div>
+                     <div class="form-ontrol">
+                     <input type="text" name="emailaddress"  id="emailaddress" placeholder="Enter Email Id "/>
+                     </div>
+                     <div class="form-ontrol">
+                        <p class="ml-2">Write Your enquiry text</p>
+                    <textarea name="enquirytext" class="textarea" placeholder="Write Your enquiry text" style="min-height:150px;"> </textarea>
+                     </div>
+                     <button type="submit" class="submit ">Submit</button>
+
+        </form>
+    </section>
+
+</div>
+{% endblock main %}

@@ -1,0 +1,106 @@
+{% extends "parent.html" %}
+{% block main %}
+{% load static %}
+<!----------------slider------------------------>
+<div class="container-fluid bg-primary py-5 mt-2 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">About Us</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:index'%}">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:registration'%}">Registration</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'nouapp:login'%}">Login</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------------->
+<div class="container-xxl py-5 appl">
+    <div class="container ">
+        <div class="row g-4">
+            <div class="col-lg-2 a_c" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="row ">
+                    <h5>About University</h5>
+                </div><hr/>
+                <div class="row ab">
+                    <ul>
+                        <a href="{% url 'nouapp:aboutus'%}" ><li id="act">Profile</li></a>
+                        <a href="{% url 'nouapp:about2'%}"><li>Aims & Objectives</li></a>
+                        <a href="{% url 'nouapp:about3'%}"><li>Administrative Setup</li></a>
+                        <a href="{% url 'nouapp:about4'%}"><li>Historical Background</li></a>
+                        <a href="{% url 'nouapp:about5'%}"><li>Recognition</li></a>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5 wow py-5 fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active" data-bs-interval="10000">
+                            <img src="{% static './images/g2.jpg'%}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item" data-bs-interval="2000">
+                            <img src="{% static './images/g3.jpg'%}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="{% static './images/g4.jpg'%}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="{% static './images/g5.jpg'%}" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>                </div>
+            </div>
+            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                <h2 class="mb-4">Profile</h2>
+                <p class="mb-4">The Nalanda Open University is the only University in the State of Bihar meant for imparting learning exclusively through the system of distance education. The University was established in March, 1987 by an ordinance, promulgated by the Government of Bihar. Later, Nalanda Open University Act, 1995 was passes by the Bihar Legislature, replacing the Ordinance, and the University came under the authority and jurisdiction of the new Act automatically. The University is named after the famous Nalanda University of Ancient India. At present, the University is functioning from its camp office at Biscomaun Bhawan, 2nd,3rd,4th and 12th Floors, Patna 800 001. </p>
+                <p class="mb-4">The University has established at its camp office at Patna a well equipped and fully automated modern office in an area of approximately 60,000 sq. feet, which houses an examination centre for about 1000 students, a state of the art Library with about 50,000 titles and a computer laboratory of about 300 IBM Pentium-4 computers, apart from administrative offices and other infra-structures. The University is recognised by the Distance Education Council (DEC), University Grants Commission, and Ministry of HRD, Government of India for imparting education through distance mode.</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------------------->
+<div class="container">
+<div class="row mx-auto ">
+   
+
+    <div class="poem-wrap  font-small ">
+        <div class="">
+        <div class="poem-line-1"><i class="fa fa-quote-left poem-icon" aria-hidden="true"></i> शत-शत नमन हमारा इस ज्ञान स्रोत को <br> वंदन प्रणत हमारा इस शुभ परिसर को</div>
+        </div>
+        <div class="">
+        <div class="poem-line-2">गीत ज़िन्दगी के सीखे जिससे आँचल में <br> गुने मंत्र – सिद्धान्त जहाँ विज्ञान-कला के <br> खुलते नये क्षितिज बहुरंगी जहाँ निरन्तर <br> मिलती विविध दृष्टियाँ अनगिन विषयों पर</div>
+        </div>
+        <div class="">
+        <div class="poem-line-1">विनत हमारा मस्तक इस विद्या -मन्दिर को <br> वंदन प्रणत हमारा इस शुभ परिसर को</div>
+        </div>
+        <div class="">
+        <div class="poem-line-1">अर्पित पुष्प हमारे इस कर्मभूमि को <br> वंदन प्रणत हमारा इस शुभ परिसर को</div>
+        </div>
+        <div class="">
+        <div class="poem-line-2">भाव बुद्धि मन होते विकसित यहाँ हमारे <br> मूल्य सभ्यता संस्कृति के हों मुखरित सारे <br> सीखा पाठ जहाँ हमने समता, ममता का <br> सहिष्णुता सहयोग, वेदना और विवेक का</div>
+        </div>
+        <div class="">
+        <div class="poem-line-1">अर्चन – नमन हमारा इस ज्ञान - स्त्रोत को <br> वंदन प्रणत हमारा इस शुभ परिसर को <i class="fa fa-quote-right poem-icon" aria-hidden="true"></i></div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+{% endblock main %}
